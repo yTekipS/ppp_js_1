@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="PL-pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function dzie(dec){
+          var binary = "";
+          var decimal=dec;
+          while(decimal>0){
+            binary = decimal%2 + binary;
+            decimal = Math.floor(decimal/2);
+          }
+          return binary;
+        }
+
+        function hex(i){
+            var hexa = "";
+          var decimal=i;
+          var letters = ['A','B','C','D','E','F']
+          while(decimal>0){
+            if(decimal%16 >9) hexa = letters[decimal%16-10] + hexa;
+            else hexa = decimal%16 + hexa;
+            
+            decimal = Math.floor(decimal/16);
+          } 
+          return hexa;
+        }
+        
+        for(i=1;i<101;i++){
+            document.write("<b>"+i+" = "+ dzie(i)+"  "+ hex(i) +"</b><br>");
+        }
+
+
+    </script>
+</body>
+</html>
